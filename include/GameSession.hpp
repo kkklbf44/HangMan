@@ -3,17 +3,13 @@
 #include <set>
 #include <string>
 
-// Хранит состояние одной партии: загаданное слово, открытые буквы
-// и количество оставшихся попыток.
 class GameSession
 {
 public:
     explicit GameSession(const std::string& wordToGuess, int maxAttempts = 6);
 
-    // Пробует открыть букву. Возвращает true, если буква есть в слове.
     bool guessLetter(char letter);
 
-    // Слово, где открытые буквы показаны, а скрытые заменены на '_'.
     std::string getMaskedWord() const;
 
     bool isWordGuessed() const;
